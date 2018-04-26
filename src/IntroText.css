@@ -1,0 +1,59 @@
+.container {
+  max-width: 800px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.link {
+  color: #4dd7fa;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.link:hover {
+  color: #4dd7fa;
+  text-decoration: underline;
+}
+
+.link:visited {
+  color: #4dd7fa;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.link-daytime {
+  color: #fef67f;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.link-daytime:hover {
+  color: #fef67f;
+  text-decoration: underline;
+}
+
+.link-daytime:visited {
+  color: #fef67f;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.paragraph {
+  font-family: 'Nunito';
+  font-weight: 200;
+  color: white;
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.paragraph-daytime {
+  font-family: 'Nunito';
+  font-weight: 200;
+  color: #222222;
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
