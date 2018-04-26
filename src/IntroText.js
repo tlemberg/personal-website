@@ -5,11 +5,10 @@ class IntroText extends React.Component {
   render() {
     const paragraphClassname = !this.props.daytime ? 'paragraph' : 'paragraph-daytime';
     const linkClassname = !this.props.daytime ? 'link' : 'link-daytime';
-    console.log(paragraphClassname);
     return (
       <div className="container">
         <div className={paragraphClassname}>
-          <span className="bold">Hello, I'm Tom Lemberg.</span> I'm the founder of <a href="https://curebase.com" className={linkClassname}>Curebase,</a> a decentralized clinical trial platform based in <a href="https://www.google.com/maps/place/The+UPS+Store/@37.7386672,-122.4708922,17z/data=!4m12!1m6!3m5!1s0x808f7deaba93c73d:0x74b3def49d38ddc9!2sThe+UPS+Store!8m2!3d37.738663!4d-122.4686982!3m4!1s0x808f7deaba93c73d:0x74b3def49d38ddc9!8m2!3d37.738663!4d-122.4686982" className={linkClassname}>San Francisco, CA.</a>
+          <span className="bold">Hello, I'm Tom Lemberg.</span> I'm the founder of <a href="https://curebase.com" className={linkClassname}>Curebase,</a> a decentralized clinical trial platform based in San Francisco, CA.
         </div>
         <div className={paragraphClassname}>
           Before Curebase I was a product manager at <a href="https://syapse.com" className={linkClassname}>Syapse</a>, a precision medicine platform in oncology, and a software engineer at Athenahealth and Amazon.

@@ -15,7 +15,7 @@ class Dog extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(props) {
     setTimeout(() => {
       setInterval(() => {
         this.setState({ jumping: true });

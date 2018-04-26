@@ -92,15 +92,15 @@ class CityScape extends React.Component {
           nUpcomingTrees += 1;
         }
       }
-      console.log(nVisibleStories);
       if (nVisibleStories > 6) {
-        const n = Math.floor(Math.random() * (nVisibleStories - nUpcomingTrees * 3)) + this.state.baseTransform;
-        console.log(this.state.columnParams);
+        const n =  + this.state.baseTransform + Math.max(Math.floor(Math.random() * (nVisibleStories - nUpcomingTrees * 3.5)), 5);
+        console.log(nUpcomingTrees);
+        console.log(n);
+        console.log(this.state.columnParams[n]);
         if (n >= this.state.columnParams.length) {
           this.setState({ winningMode: true });
           return;
         } else {
-          console.log(n);
           const stories = this.state.columnParams[n].stories;
           if (stories > 0) {
             newMagicColumn = n;
@@ -109,10 +109,14 @@ class CityScape extends React.Component {
         }
       }
     }
-    this.setState({
-      magicColumn: newMagicColumn,
-      magicStory: newMagicStory,
-    });
+    if (safeGuard === 0) {
+      this.setState({ winningMode: true });
+    } else {
+      this.setState({
+        magicColumn: newMagicColumn,
+        magicStory: newMagicStory,
+      }); 
+    }
   }
 
   renderCityScape() {
@@ -153,15 +157,13 @@ class CityScape extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let treeCount = 0;
     for (let i = 0; i < this.state.baseTransform; i += 1) {
       if (this.state.columnParams[i].showTrees) {
         treeCount += 1;
       }
     }
-    console.log(treeCount);
-    const transform = this.state.winningMode ? this.state.totalWidth + STORY_HEIGHT * 10 : this.state.baseTransform * STORY_HEIGHT + treeCount * STORY_HEIGHT * 3;
+    const transform = this.state.winningMode ? this.state.totalWidth + STORY_HEIGHT * 10 : this.state.baseTransform * STORY_HEIGHT + treeCount * STORY_HEIGHT * 3.5;
     return (
       <div style={{
         display: 'flex',

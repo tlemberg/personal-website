@@ -55,7 +55,7 @@ class StoryBlock extends React.Component {
     };
   }
 
-  componentDidUpdate(props) {
+  componentDidUpdate() {
     if (this.props.isMagic) {
       setTimeout(() => {
         if (this.props.isMagic) {
@@ -74,6 +74,12 @@ class StoryBlock extends React.Component {
           }, 4000)
         }
       }, 1000);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.props.isMagic) {
+      this.props.onMagicWindowFadeOut();
     }
   }
 
